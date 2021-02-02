@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+
+<form
+        th:action="@{/save}"
+        method="post">
+
+    <select name="lang">
+        <option
+                th:each="lang : ${all}"
+                th:value="${lang}"
+                th:text="${lang}"
+                th:selected="${lang} == ${preferredLang}">
+        </option>
+    </select>
+    <input type="submit" value="Change language"/>
+</form>
+<br/>
+<br/>
+<br/>
+
+Your preferred lang is <span th:text="${preferredLang}"></span>
+</body>
